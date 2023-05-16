@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(rgba(0,130,150,0), rgba(0,150,140,0)), url("../images/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: Lato;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+#header {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+#logo img {
+  max-width: 300px;
+}
+#menu {
+  flex: 1;
+  display: flex;
+  max-width: 500px;
+}
+.menu-list {
+  list-style-type: none;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-item {
+  display: inline-block;
+  font-size: 1.4rem;
+  border-bottom: 1px solid transparent;
+  padding: 7px;
+  transition: 0.3s ease all;
+}
+.menu-item:hover {
+  transform: translateY(-2px);
+  border-bottom-color: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+#content {
+  max-width: 950px;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-weight: 100;
+  padding: 40px 50px;
+  box-sizing: border-box;
+  background: rgba(50,150,150,0.5);
+}
+.content-header {
+  font-size: 37px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+.content-info {
+  text-align: justify;
+  font-weight: 100;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}

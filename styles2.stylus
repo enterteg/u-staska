@@ -1,0 +1,484 @@
+bgColor = rgba(255,255,255,0.95)
+
+html
+  overflow-x: hidden
+  height: 100%  
+body
+  margin: 0
+  padding: 0
+  background-image: linear-gradient(rgba(0,200,220,0.5), rgba(0,125,125,0.3)), url('../images/bg2.jpg')
+  background-size: cover
+  background-attachment: fixed
+  background-position: center
+  color: white
+  font-family: Lato
+  font-weight: 100
+  font-size: 18px
+  line-height: 1.6
+  padding-bottom: 50px
+  overflow-x: hidden
+#header
+  max-width: 900px
+  margin: 80px auto
+  display: flex
+  justify-content: space-between
+  @media(max-width: 1100px)
+    flex-direction: column
+    align-items: center
+  @media(max-width: 700px)
+    margin-bottom: 40px
+#logo img
+  max-width: 300px
+
+#menu
+  flex: 1
+  display: flex
+  max-width: 600px
+  @media(max-width: 1100px)
+    margin-top: 20px
+    max-width: 800px
+
+.menu-button
+  display: block
+  position: fixed
+  top: 30px
+  right: 30px
+  z-index: 1000
+  @media(min-width: 700px)
+    display: none
+
+#menu-icon-button
+  cursor: pointer
+  font-size: 30px
+  text-shadow: 0 0 10px rgba(0,0,0,0.5)
+  z-index: 1000
+
+#menu-list
+  list-style-type: none
+  flex: 1
+  display: flex
+  justify-content: space-between
+  align-items: center
+  @media(max-width: 700px)
+    display: none
+    background: white
+    color: black
+    padding: 10px
+    position: fixed
+    top: 50px
+    right: 30px
+    left: 30px
+    z-index: 1000
+    box-shadow: 0 0 10px rgba(0,0,0,0.3)
+
+.menu-item
+  display: inline-block
+  font-size: 1.4rem
+  border-bottom: 2px solid transparent
+  padding: 7px
+  transition: 0.3s ease all
+  text-decoration: none
+  color: white
+  &:hover
+    transform: translateY(-2px)
+    border-bottom-color: rgba(255,255,255,0.7)
+    cursor: pointer
+  @media(max-width: 1100px)
+    padding: 7px 15px
+  @media(max-width: 700px)
+    color: black
+    font-weight: 300
+    padding: 10px 0px
+    display: block
+    text-align: center
+    border-bottom: 1px solid rgba(0,0,0,0.1)
+
+.menu-item-no-border
+  border-bottom: none
+
+#carousel
+  max-width: 1000px
+  width: 90%
+  margin: 0 auto
+  margin-bottom: 100px
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3)
+  @media(max-width: 1100px)
+    max-width: 800px
+    overflow: hidden
+    margin-bottom: 50px
+.carousel-image
+  width: 100%
+  object-fit: cover
+  
+  img
+    width: 100%
+    height: auto
+
+.slick-arrow
+  width: 40px
+  height: 40px
+  
+.slick-next
+  right: -40px
+
+.slick-prev
+  left: -40px
+
+.content-container
+  margin: 20px 0
+
+.content_wrapper
+  background: bgColor
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    top: -100px
+    bottom: -100px
+    z-index: -1
+    transform: skewX(30deg)
+    background: rgba(255,255,255,0.15)
+    max-width: 100%
+    @media(max-width: 1100px)
+      transform: skewX(10deg)
+    @media(max-width: 700px)
+      display: none
+
+.content
+  max-width 900px
+  margin: 0 auto
+  font-weight: 100
+  padding: 20px 50px 50px
+  box-sizing: border-box
+  color: black
+  &:after
+    content: ''
+    clear: both
+    display: block
+  @media(max-width: 1100px)
+    padding: 40px 35px
+
+.sm-no-padding
+  @media(max-width: 700px)
+    padding: 0px 0px
+
+.content-wider
+  max-width: 1020px
+
+triangle = @block {
+  height: 100
+  width: 0
+  background: transparent
+}
+
+triangleBottom = @block {
+  {triangle}
+  border-top: 100px solid bgColor
+}
+
+triangleTop = @block {
+  {triangle}
+  border-bottom: 80px solid bgColor
+}
+
+.triangle-top-left
+  {triangleTop}
+  border-right: 100vw solid transparent
+  @media(max-width: 700px)
+    display: none
+
+.triangle-bottom-right
+  {triangleBottom}
+  border-left: 100vw solid transparent
+  @media(max-width: 700px)
+    display: none
+
+.offer-wrapper
+  padding: 50px
+  margin-bottom: 50px
+  position: relative
+  z-index: 1
+  @media(max-width: 700px)
+    padding: 40px 25px
+
+.offer-wrapper-skew
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  overflow: hidden
+  &-right
+    transform: skewX(2deg)
+    @media(max-width: 700px)
+      transform: skewX(0deg)
+  &-left
+    transform: skewX(-2deg)
+    @media(max-width: 700px)
+      transform: skewX(0deg)
+.offer-wrapper-background-overlay
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(185,55,155,0.85)
+
+.background-overlay
+  &-blue
+    background: rgba(50,140,170,0.85)
+  &-red
+    background: rgba(220,50,100,0.85)
+  &-green
+    background: rgba(50,200,130,0.85)
+  &-teal
+    background: rgba(50,220,220,0.8)
+
+.offer-bg-image
+  position: relative
+  object-fit: cover
+  width: 100%
+  @media(max-width: 1000px)
+    height: 100%
+    min-width: 100%
+
+.offer-content
+  position: relative
+  z-index: 3
+  color: white
+
+.content-header
+  font-size: 35px
+  font-weight: 300
+  margin-bottom: 40px
+  &-small
+    font-weight: 400
+    font-size: 30px
+    margin-bottom: 20px
+
+.content-info
+  text-align: justify
+  font-weight: 300
+  line-height: 2
+
+.content-two-cols
+  display: flex
+  justify-content: space-between
+  @media(max-width: 700px)
+    flex-direction: column
+    align-items: center
+.content-side-block
+  width: 100%
+  
+.content-side-block-right
+  float: right
+  margin-left: 30px
+
+.content-side-block-left
+  float: left
+  margin-right: 30px
+
+.photos-column
+  margin-left: 50px
+  min-width: 260px
+  @media(max-width: 700px)
+    display: none
+photoWrapper = @block {
+  object-fit: cover
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2)
+  border: 4px solid white
+}
+
+.photo-wrapper
+  {photoWrapper}
+  max-width: 260px
+  height: 180px
+  margin-bottom: 30px
+.photo-right
+  float: right
+
+.photo-rotate-right
+  transform: rotate(1deg)
+
+.photo-rotate-left
+  transform: rotate(-1deg)
+
+.photo-wrapper-left
+  float: left
+
+.photo
+  width: 100%
+  height: 100%
+
+.bold
+  font-weight: 400
+
+
+.lightbox .lb-image
+  border-top-left-radius: 0
+  border-top-right-radius: 0
+  border-bottom-left-radius: 0
+  border-bottom-right-radius: 0
+  border: none
+
+.content-gallery
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  margin: 0 -30px
+.gallery-image
+  max-width: 20%
+  height: 130px
+  margin: 0px 20px 20px 0px
+  overflow: hidden
+  {photoWrapper}
+  @media(max-width: 800px)
+    max-width: 30%
+    height: 150px
+    margin: 0px 10px 10px 0px
+  @media(max-width: 600px)
+    max-width: 27%
+    height: 70px
+
+.gallery-photo
+  width: 100%
+  min-height: 100%
+
+.list-non-decorate
+  list-style-type: none
+  padding-left: 0px
+  li
+    margin-top: 10px
+    line-heiht: 20px
+
+.icon
+  font-size: 20px
+  width: 30px
+  text-align: center
+
+.icon-red
+  color: #f88
+
+.icon-blue
+  color: #33aadd
+
+.icon-green
+  color: #33ccaa
+
+.icon-gray
+  color: #777
+
+.content-header-image-wrapper
+  max-width: 100%
+  max-height: 300px
+  overflow: hidden
+  margin-bottom: 50px
+  {photoWrapper}
+
+.content-header-image
+  width: 100%
+  height: auto
+  display: block
+  position: relative
+
+.link-gallery
+  text-decoration: none
+  font-weight: 400
+  margin-top: -30px
+  display: block
+
+.content-contact
+  font-size: 20px
+  &-left
+    float: left
+    @media(max-width: 700px)
+      float: none
+  &-right
+    float: right
+    text-align: right
+    @media(max-width: 700px)
+      float: none
+      text-align: left
+      margin-top: 50px
+
+.spacer
+  height: 50px
+  clear: both
+
+#map
+  width: 100%
+  height: 500px
+  background: none!important
+  clear: wwwboth
+
+.attractions
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -15px
+
+.attraction-wrapper
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3)
+  background: white
+  width: 31%
+  box-sizing: border-box
+  margin: 0 10px
+  margin-bottom: 40px
+  height: 500px
+  display: flex
+  flex-direction: column
+  @media(max-width: 1000px)
+    width: 45%
+  @media(max-width: 700px)
+    width: 100%
+    margin-left: 0
+    margin-right: 0
+
+.attraction-title
+  text-align: left
+  font-size: 20px
+  font-weight: bold
+  padding: 30px 30px 15px 30px
+
+.attraction-content
+  padding: 0 30px 25px
+  font-size: 16px
+  text-align: left
+  flex: 1
+  display: flex
+  @media(max-width: 700px)
+    font-size: 18px
+.attraction-photo
+  width: 100%
+  height auto
+  display: block
+  object-fit: cover
+  height: 200px
+
+
+#footer
+  width: 100%
+  max-width: 900px
+  margin: 0 auto
+  justify-content: flex-start
+  display: flex
+  padding-top: 30px
+#fb-button
+  border-radius: 10px
+  padding: 15px 20px
+  background: #3b5998 
+  font-weight: 400
+  letter-spacing: 1px
+  line-height: 20px
+  display: flex
+  align-items: center
+  box-shadow: 0 2px 100px rgba(250,250,250,0.5)
+  text-decoration: none !important
+  img 
+    max-width: 30px
+    display: inline-block
+  span
+    margin-left: 10px
+    text-decoration: none !important
+    color: white
